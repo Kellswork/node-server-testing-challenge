@@ -1,13 +1,12 @@
 exports.up = function(knex) {
-    return knex.schema.createTable('users', table => {
+    return knex.schema.createTable('people', table => {
       table.increments();
-      table.varchar('username', 128).notNullable();
-      table.text('password').notNullable();
-      table.text('department').notNullable();
+      table.varchar('firstname', 128).notNullable();
+      table.text('lastname').notNullable();
     });
   };
   
   exports.down = function(knex) {
-    return knex.schema.dropTableIfExists('users');
+    return knex.schema.dropTableIfExists('people');
   };
   
